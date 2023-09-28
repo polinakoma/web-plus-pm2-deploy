@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 dotenv.config({ path: '.env.deploy'  })
 
 const {
-  DEPLOY_USER, DEPLOY_HOST, DEPLOY_PATH, DEPLOY_REF, DEPLOY_REPO
+  DEPLOY_USER, DEPLOY_HOST, DEPLOY_PATH, DEPLOY_REF, DEPLOY_REPOSITORY
 } = process.env;
 
 module.exports = {
@@ -13,7 +13,7 @@ deploy: {
       host: DEPLOY_HOST,
       ref: DEPLOY_REF,
       path: DEPLOY_PATH,
-      repo: DEPLOY_REPO,
+      repo: DEPLOY_REPOSITORY,
       'post-deploy': `cd frontend && npm ci && npm run build`,
     },
   }
