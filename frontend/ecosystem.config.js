@@ -7,10 +7,6 @@ const {
 } = process.env;
 
 module.exports = {
-  apps : [{
-    name   : "mesto_frontend"
-  }],
-
 deploy: {
     production: {
       user: DEPLOY_USER,
@@ -18,7 +14,7 @@ deploy: {
       ref: DEPLOY_REF,
       path: DEPLOY_PATH,
       repo: DEPLOY_REPO,
-      'post-deploy': `cd frontend && npm i && npm run build`,
+      'post-deploy': `cd frontend && npm ci && npm run build`,
     },
   }
 }
