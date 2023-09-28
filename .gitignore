@@ -1,4 +1,4 @@
-.idea
+cd.idea
 node_modules
 *.log
 build
