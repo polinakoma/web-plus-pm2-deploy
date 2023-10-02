@@ -19,6 +19,7 @@ class Api {
   
     getCardList() {
       return fetch(`${this._address}/cards`, {
+        mode: 'no-cors',
         headers: {
           'Authorization': `Bearer ${this._token}`,
         },
@@ -28,6 +29,7 @@ class Api {
   
     addCard({ name, link }) {
       return fetch(`${this._address}/cards`, {
+        mode: 'no-cors',
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${this._token}`,
@@ -43,6 +45,7 @@ class Api {
   
     removeCard(cardId) {
       return fetch(`${this._address}/cards/${cardId}`, {
+        mode: 'no-cors',
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${this._token}`,
@@ -53,6 +56,7 @@ class Api {
   
     getUserInfo() {
       return fetch(`${this._address}/users/me`, {
+        mode: 'no-cors',
         headers: {
           'Authorization': `Bearer ${this._token}`,
           'Content-Type': 'application/json',
@@ -63,6 +67,7 @@ class Api {
   
     setUserInfo({ name, about }) {
       return fetch(`${this._address}/users/me`, {
+        mode: 'no-cors',
         method: 'PATCH',
         headers: {
           'Authorization': `Bearer ${this._token}`,
@@ -78,6 +83,7 @@ class Api {
   
     setUserAvatar({ avatar }) {
       return fetch(`${this._address}/users/me/avatar`, {
+        mode: 'no-cors',
         method: 'PATCH',
         headers: {
           'Authorization': `Bearer ${this._token}`,
@@ -92,6 +98,7 @@ class Api {
     changeLikeCardStatus(cardId, like) {
       
       return fetch(`${this._address}/cards/${cardId}/likes`, {
+        mode: 'no-cors',
         method: like ? 'PUT' : 'DELETE',
         headers: {
           'Authorization': `Bearer ${this._token}`,
@@ -102,6 +109,7 @@ class Api {
   
     register(email, password) {
       return fetch(`${this._address}/signup`, {
+        mode: 'no-cors',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -113,6 +121,7 @@ class Api {
   
     login(email, password) {
       return fetch(`${this._address}/signin`, {
+        mode: 'no-cors',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -129,6 +138,7 @@ class Api {
   
     checkToken(token) {
       return fetch(`${this._address}/users/me`, {
+        mode: 'no-cors',
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
