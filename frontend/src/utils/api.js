@@ -109,7 +109,7 @@ class Api {
   
     register(email, password) {
       return fetch(`${this._address}/signup`, {
-        mode: 'no-cors',
+        // mode: 'no-cors',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -121,7 +121,7 @@ class Api {
   
     login(email, password) {
       return fetch(`${this._address}/signin`, {
-        mode: 'no-cors',
+        // mode: 'no-cors',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
